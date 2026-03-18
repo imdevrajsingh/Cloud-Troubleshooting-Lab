@@ -229,17 +229,134 @@ Cloud systems require layered analysis
 
 This project helped me understand how real-world cloud issues occur and how to resolve them efficiently using a structured approach.
 
-📸 Screenshots (Add Here)
+# 📸 Project Walkthrough (Step-by-Step Screenshots)
 
-EC2 running instance
+---
 
-Website working
+## 🚀 EC2 Setup
 
-CPU spike graph
+![Instance Running](screenshots/Instance Running.png)
 
-Alarm triggered
+---
 
-Error scenarios
+## 🌐 Website Setup (Apache)
+
+### Install Apache
+![Install Apache](screenshots/Install Httpd.png)
+
+### Start Apache
+![Start Apache](screenshots/start httpd.png)
+
+### Create Website
+![Create Site](screenshots/creating site.png)
+
+### Website Working
+![Website Working](screenshots/website working.png)
+
+---
+
+## 🔴 Scenario 1: Website Down (HTTP Blocked)
+
+### ❌ Remove HTTP Port 80
+![Remove HTTP](screenshots/delete HTTP Port 80.png)
+
+### 😵 Website Not Working
+![Website Not Working](screenshots/site not working.png)
+
+### ✅ Fix: Enable HTTP (Website Working Again)
+![Website Working](screenshots/website working.png)
+
+---
+
+## 🔴 Scenario 2: Apache Service Stopped
+
+### ❌ Stop Apache
+![Stop Apache](screenshots/stop httpd.png)
+
+### 😵 Website Down
+![Website Down](screenshots/site not working.png)
+
+### ✅ Fix: Start Apache Again
+![Start Apache](screenshots/start httpd.png)
+
+---
+
+## 🔴 Scenario 3: High CPU Usage
+
+### ❌ Generate CPU Load
+![Yes Command](screenshots/yes command.png)
+
+### 🔍 Analyze using TOP
+![Top Command](screenshots/top command.png)
+
+### ✅ Fix CPU Issue
+![Kill Process](screenshots/killall yes.png)
+
+---
+
+## 🔴 Scenario 4: SSH Connection Failure
+
+### ❌ Remove SSH Access
+![Remove SSH](screenshots/remove ssh.png)
+
+### 😵 SSH Failed
+![SSH Failed](screenshots/failed to connect instance.png)
+
+### ✅ Add SSH Access
+![Add SSH](screenshots/adding SSH.png)
+
+### ✅ Successfully Connected
+![Instance Connected](screenshots/Instance connected.png)
+
+---
+
+## 🔴 Scenario 5: File Permission Issue
+
+### ❌ Wrong Permission (000)
+![Permission 000](screenshots/Wrong File Permission 000.png)
+
+### 😵 Website Error
+![Website Error](screenshots/Website error.png)
+
+### ✅ Fix Permission (644)
+![Permission 644](screenshots/permission 644.png)
+
+---
+
+## 📊 Log Analysis
+
+![Logs](screenshots/Tail log.png)
+
+---
+
+## 🚨 Monitoring & Alerting Setup
+
+### SNS Creation
+![SNS Create](screenshots/Creating SNS.png)
+
+### Choose Email
+![Choose Email](screenshots/Choose Email.png)
+
+### Confirm Subscription
+![Confirm Email](screenshots/Confirm Subscription Email.png)
+
+### Select Metric
+![Select Metric](screenshots/Select Metric CPUUtilization.png)
+
+### Create Alarm
+![CloudWatch Alarm](screenshots/Cloudwatch Alarm.png)
+
+---
+
+## 📧 Alert Notification
+
+![Alert Notification](screenshots/Alert Notification.png)
+
+---
+
+## 🛑 Stop CPU Load
+
+![Stop CPU](screenshots/Killall yes to stop alert.png)
 
 👨‍💻 Author
 
