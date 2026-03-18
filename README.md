@@ -229,134 +229,178 @@ Cloud systems require layered analysis
 
 This project helped me understand how real-world cloud issues occur and how to resolve them efficiently using a structured approach.
 
-# 📸 Project Walkthrough (Step-by-Step Screenshots)
+# 📸 Project Walkthrough (Step-by-Step)
+
+This section demonstrates the complete lifecycle of the project — from setup to failure simulation, troubleshooting, monitoring, and resolution.
 
 ---
 
-## 🚀 EC2 Setup
+## 🚀 1. EC2 Setup
 
-![Instance Running](screenshots/Instance Running.png)
+EC2 instance successfully launched and running.
 
----
-
-## 🌐 Website Setup (Apache)
-
-### Install Apache
-![Install Apache](screenshots/Install Httpd.png)
-
-### Start Apache
-![Start Apache](screenshots/start httpd.png)
-
-### Create Website
-![Create Site](screenshots/creating site.png)
-
-### Website Working
-![Website Working](screenshots/website working.png)
+![Instance Running](screenshots/instance-running.png)
 
 ---
 
-## 🔴 Scenario 1: Website Down (HTTP Blocked)
+## 🌐 2. Web Server Setup (Apache)
 
-### ❌ Remove HTTP Port 80
-![Remove HTTP](screenshots/delete HTTP Port 80.png)
+Installing Apache web server.
 
-### 😵 Website Not Working
-![Website Not Working](screenshots/site not working.png)
+![Install Apache](screenshots/install-httpd.png)
 
-### ✅ Fix: Enable HTTP (Website Working Again)
-![Website Working](screenshots/website working.png)
+Starting Apache service.
 
----
+![Start Apache](screenshots/start-httpd.png)
 
-## 🔴 Scenario 2: Apache Service Stopped
+Creating a sample website.
 
-### ❌ Stop Apache
-![Stop Apache](screenshots/stop httpd.png)
+![Create Site](screenshots/create-site.png)
 
-### 😵 Website Down
-![Website Down](screenshots/site not working.png)
+Website successfully running.
 
-### ✅ Fix: Start Apache Again
-![Start Apache](screenshots/start httpd.png)
+![Website Working](screenshots/website-working.png)
 
 ---
 
-## 🔴 Scenario 3: High CPU Usage
+## 🔴 3. Scenario: Website Down (HTTP Blocked)
 
-### ❌ Generate CPU Load
-![Yes Command](screenshots/yes command.png)
+HTTP port (80) removed from Security Group.
 
-### 🔍 Analyze using TOP
-![Top Command](screenshots/top command.png)
+![Delete HTTP](screenshots/delete-http-port-80.png)
 
-### ✅ Fix CPU Issue
-![Kill Process](screenshots/killall yes.png)
+Website becomes inaccessible.
 
----
+![Website Down](screenshots/site-not-working.png)
 
-## 🔴 Scenario 4: SSH Connection Failure
+After fixing the issue, website works again.
 
-### ❌ Remove SSH Access
-![Remove SSH](screenshots/remove ssh.png)
-
-### 😵 SSH Failed
-![SSH Failed](screenshots/failed to connect instance.png)
-
-### ✅ Add SSH Access
-![Add SSH](screenshots/adding SSH.png)
-
-### ✅ Successfully Connected
-![Instance Connected](screenshots/Instance connected.png)
+![Website Working](screenshots/website-working.png)
 
 ---
 
-## 🔴 Scenario 5: File Permission Issue
+## 🔴 4. Scenario: Apache Service Stopped
 
-### ❌ Wrong Permission (000)
-![Permission 000](screenshots/Wrong File Permission 000.png)
+Stopping Apache service.
 
-### 😵 Website Error
-![Website Error](screenshots/Website error.png)
+![Stop Apache](screenshots/stop-httpd.png)
 
-### ✅ Fix Permission (644)
-![Permission 644](screenshots/permission 644.png)
+Website goes down again.
 
----
+![Website Down](screenshots/site-not-working.png)
 
-## 📊 Log Analysis
+Fix: Restart Apache service.
 
-![Logs](screenshots/Tail log.png)
+![Start Apache](screenshots/start-httpd.png)
 
 ---
 
-## 🚨 Monitoring & Alerting Setup
+## 🔴 5. Scenario: High CPU Usage
 
-### SNS Creation
-![SNS Create](screenshots/Creating SNS.png)
+Simulating CPU load using background process.
 
-### Choose Email
-![Choose Email](screenshots/Choose Email.png)
+![Yes Command](screenshots/yes-command.png)
 
-### Confirm Subscription
-![Confirm Email](screenshots/Confirm Subscription Email.png)
+Analyzing system performance using `top`.
 
-### Select Metric
-![Select Metric](screenshots/Select Metric CPUUtilization.png)
+![Top Command](screenshots/top-command.png)
 
-### Create Alarm
-![CloudWatch Alarm](screenshots/Cloudwatch Alarm.png)
+Fix: Killing unnecessary processes.
 
----
+![Kill Process](screenshots/killall-yes.png)
 
-## 📧 Alert Notification
+Stopping CPU load completely.
 
-![Alert Notification](screenshots/Alert Notification.png)
+![Stop CPU](screenshots/killall-yes-stop-alert.png)
 
 ---
 
-## 🛑 Stop CPU Load
+## 🔴 6. Scenario: SSH Connection Failure
 
-![Stop CPU](screenshots/Killall yes to stop alert.png)
+Removing SSH access.
+
+![Remove SSH](screenshots/remove-ssh.png)
+
+SSH connection fails.
+
+![SSH Failed](screenshots/ssh-failed.png)
+
+Fix: Re-adding SSH access.
+
+![Add SSH](screenshots/add-ssh.png)
+
+Successfully connected to instance.
+
+![Instance Connected](screenshots/instance-connected.png)
+
+---
+
+## 🔴 7. Scenario: File Permission Issue
+
+Setting incorrect file permissions.
+
+![Permission 000](screenshots/wrong-file-permission-000.png)
+
+Website shows error.
+
+![Website Error](screenshots/website-error.png)
+
+Fix: Correcting file permissions.
+
+![Permission Fixed](screenshots/permission-644.png)
+
+---
+
+## 📊 8. Log Analysis
+
+Analyzing logs to debug issues.
+
+![Logs](screenshots/tail-log.png)
+
+---
+
+## 🚨 9. Monitoring & Alerting Setup
+
+Creating SNS topic.
+
+![Create SNS](screenshots/create-sns.png)
+
+Choosing email for notifications.
+
+![Choose Email](screenshots/choose-email.png)
+
+Confirming email subscription.
+
+![Confirm Email](screenshots/confirm-email.png)
+
+Selecting CPU utilization metric.
+
+![Select Metric](screenshots/select-metric-cpu.png)
+
+Creating CloudWatch alarm.
+
+![CloudWatch Alarm](screenshots/cloudwatch-alarm.png)
+
+---
+
+## 📧 10. Alert Notification
+
+Receiving alert when CPU threshold is exceeded.
+
+![Alert Notification](screenshots/alert-notification.png)
+
+---
+
+## 🧠 Summary
+
+This project demonstrates:
+
+- Real-world troubleshooting scenarios  
+- Root cause analysis  
+- Monitoring and alerting setup  
+- Step-by-step debugging approach  
+
+Each issue was intentionally created and resolved, simulating real production environments.
 
 👨‍💻 Author
 
