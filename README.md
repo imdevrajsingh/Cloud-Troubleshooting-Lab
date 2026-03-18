@@ -1,4 +1,6 @@
 🚀 Cloud Troubleshooting Lab (AWS Project)
+This project simulates real-world cloud failures and demonstrates structured troubleshooting using AWS.
+
 📌 Project Overview
 
 This project demonstrates real-world cloud troubleshooting scenarios using AWS services.
