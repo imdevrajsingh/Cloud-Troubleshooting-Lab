@@ -27,7 +27,7 @@ Components Used:
 
 ⚙️ Setup Steps
 1. Launch EC2 Instance
-![EC2 Running] (screenshots/Instance Running.png)
+![EC2 Running](screenshots/1-ec2-running.png)
 
 AMI: Amazon Linux 2
 
